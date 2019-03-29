@@ -13,7 +13,12 @@
 
 
 /*admin route*/
-Route::get('/adminpanel', 'AdminController@index');
+Route::group(['middleware'=>['web','admin']],function(){
+    Route::get('/adminpanel', 'AdminController@index');
+    Route::resource('adminpanel/users', 'UserController');
+
+});
+
 
 
 Route::get('/', function () {return view('welcome');});
