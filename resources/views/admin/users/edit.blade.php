@@ -28,8 +28,48 @@
                     <!-- /.box-header -->
                     <div class="box-body">
                         {!! Form::model($user, ['method' => 'PATCH','route' => ['users.update', $user->id]]) !!}
-                            @include('admin.users.form')
+                        @include('admin.users.form')
                         {!! Form::close() !!}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">Edit password</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        {!! Form::open(['url'=>'/adminpanel/users/changePassword' ,'method'=>'POST']) !!}
+                        <input type="hidden" value="{{$user->id}}" name="user_id">
+                             <div class="form-group row">
+                        <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+
+                        <div class="col-md-10">
+                            <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}"
+                                   name="password" required>
+
+                            @if ($errors->has('password'))
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                            @endif
+                        </div>
+                    </div>
+
+                            <div class="col-md-2">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('submit') }}
+                                </button>
+                            </div>
+                        {!! Form::close() !!}
+
                     </div>
                 </div>
             </div>

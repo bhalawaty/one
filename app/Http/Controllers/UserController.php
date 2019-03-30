@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use  App\Http\Requests\AdminAddUserRequest;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class UserController extends Controller
 {
@@ -35,6 +36,20 @@ class UserController extends Controller
         return redirect('adminpanel/users')->withFlashMessage('successful operation');
     }
     public function update(User $user ,Request $request){
+        $user->fill($request->all())->save();
+        return redirect('adminpanel/users')->withFlashMessage('successful operation');
+    }
 
+    public function UpdatePassword(User $user ,Request $request){
+        $userUpdated=$user->find($request->user_id);
+        $password=bcrypt($request->password);
+        $userUpdated->fill(['password'=>$password])->save();
+        return redirect('adminpanel/users')->withFlashMessage('successful operation');
+
+
+    }
+    public function destroy(User $user){
+        $user->delete();
+        return redirect('adminpanel/users')->withFlashMessage('successful operation');
     }
 }
