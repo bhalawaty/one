@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>
-
+admin panel | {{getsetting()}}
         @yield('title')
     </title>
     <!-- Tell the browser to be responsive to screen width -->
@@ -556,7 +556,7 @@
 @yield('footer')
 <!-- ./wrapper -->
 <!-- jQuery 3 -->
-{!! Html::script('admin/bower_components/jquery/dist/jquery.min.js') !!}
+{!!  Html::script('/admin/bower_components/jquery/dist/jquery.min.js') !!}
 <!-- jQuery UI 1.11.4 -->
 {!! Html::script('admin/bower_components/jquery-ui/jquery-ui.min.js') !!}
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->

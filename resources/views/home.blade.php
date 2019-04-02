@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title')
-    welcome mother fucker
+    welcome to first real estate website in middle east
 @endsection
 @section('content')
 <div class="container">

@@ -14,10 +14,19 @@
 
 /*admin route*/
 Route::group(['middleware'=>['web','admin']],function(){
+
+    Route::get('/adminpanel/users/data',['as'=>'adminpanel.users.data','uses'=>'UserController@anyData']);
+
+    /*admin*/
     Route::get('/adminpanel', 'AdminController@index');
+    /*users*/
     Route::resource('adminpanel/users', 'UserController');
     Route::post('/adminpanel/users/changePassword', 'UserController@UpdatePassword');
     Route::get('/adminpanel/users/{user}/delete', 'UserController@destroy');
+
+    /*sitesetting*/
+    Route::get('/adminpanel/sitesettings', 'SiteSettingController@index');
+    Route::post('/adminpanel/sitesettings', 'SiteSettingController@store');
 
 
 
