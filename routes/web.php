@@ -14,9 +14,9 @@
 
 /*admin route*/
 Route::group(['middleware'=>['web','admin']],function(){
-
+    /*datatable*/
     Route::get('/adminpanel/users/data',['as'=>'adminpanel.users.data','uses'=>'UserController@anyData']);
-
+    Route::get('/adminpanel/buildings/data', ['as' => 'adminpanel.buildings.data', 'uses' => 'BuildingController@anyData']);
     /*admin*/
     Route::get('/adminpanel', 'AdminController@index');
     /*users*/
@@ -28,7 +28,9 @@ Route::group(['middleware'=>['web','admin']],function(){
     Route::get('/adminpanel/sitesettings', 'SiteSettingController@index');
     Route::post('/adminpanel/sitesettings', 'SiteSettingController@store');
 
-
+    /*users*/
+    Route::resource('adminpanel/buildings', 'BuildingController');
+    Route::get('/adminpanel/buildings/{building}/delete', 'BuildingController@destroy');
 
 });
 

@@ -1,6 +1,7 @@
 @extends('admin.layouts.layout')
 
 @section('title')
+    update user
 @endsection
 
 @section('header')
@@ -14,7 +15,7 @@
         <ol class="breadcrumb">
             <li><a href="{{url('/adminpanel')}}"><i class="fa fa-dashboard"></i> Home</a></li>
             <li><a href="{{url('/adminpanel/users')}}">all users</a></li>
-            <li class="active" href="{{url('/adminpanel/users/create')}}">add user</li>
+            <li class="active" href="{{url('/adminpanel/users/edit')}}">edit user</li>
         </ol>
     </section>
 
