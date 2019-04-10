@@ -18,6 +18,6 @@ class SiteSettingController extends Controller
             $sitesettingupdate=$sitesetting->where('namesetting',$key)->get()[0];
             $sitesettingupdate->fill(['value'=>$req])->save();
         }
-        return Redirect::back();
+        return Redirect::back()->withFlashMessage('successful operation');
     }
 }

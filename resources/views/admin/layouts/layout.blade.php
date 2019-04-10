@@ -555,6 +555,9 @@ admin panel | {{getsetting()}}
 </div>
 @yield('footer')
 <!-- ./wrapper -->
+<!--flash message-->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+@include('admin.layouts.flash_message')
 <!-- jQuery 3 -->
 {!!  Html::script('/admin/bower_components/jquery/dist/jquery.min.js') !!}
 <!-- jQuery UI 1.11.4 -->
@@ -563,6 +566,7 @@ admin panel | {{getsetting()}}
 <script>
     $.widget.bridge('uibutton', $.ui.button);
 </script>
+
 <!-- Bootstrap 3.3.7 -->
 {!! Html::script('admin/bower_components/bootstrap/dist/js/bootstrap.min.js') !!}
 <!-- Morris.js charts -->
