@@ -39,3 +39,7 @@ Route::group(['middleware'=>['web','admin']],function(){
 Route::get('/', function () {return view('welcome');});
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/showAll', 'BuildingController@showAll');
+Route::get('/showAll/{rent}', 'BuildingController@rent');
+Route::get('/showAll/type/{type}', 'BuildingController@type');
+Route::post('/search', 'BuildingController@search');

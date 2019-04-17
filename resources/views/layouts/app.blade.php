@@ -44,6 +44,7 @@
                 </a>
                 <ul class="nav" id="nav">
                     <li class="current"><a class="nav-link" href="{{url('home')}}">Home</a></li>
+                    <li class="nav-link"><a href="{{url('/showAll')}}">All Estates </a></li>
                     <li><a class="nav-link" href="about.html">About Us</a></li>
                     <li><a class="nav-link" href="services.html">Services</a></li>
                     <li><a class="nav-link" href="contact.html">Contact Us</a></li>
@@ -96,9 +97,7 @@
             <a class="fa fa-twitter social-icon" href="{{getsetting('twitter')}}"></a>
             <a class="fa fa-youtube social-icon" href="{{getsetting('youtube')}}"></a>
              </div>
-        <div class="copy">
-            <p>Copyright &copy; 2015 Company Name. Design by <a href="http://www.templategarden.com" rel="nofollow">TemplateGarden</a></p>
-        </div>
+
     </div>
 </div>
 @yield('footer')

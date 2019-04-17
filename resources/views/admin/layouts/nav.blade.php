@@ -27,14 +27,15 @@
 
 <li class=" treeview">
     <a href="#">
-        <i class="fa fa-dashboard"></i> <span>real states controller</span>
+        <i class="fa fa-dashboard"></i> <span>real estates controller</span>
         <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
     </a>
     <ul class="treeview-menu">
-        <li class="active"><a href="{{url('/adminpanel/buildings/create')}}"><i class="fa fa-circle-o"></i>add state</a>
+        <li class="active"><a href="{{url('/adminpanel/buildings/create')}}"><i class="fa fa-circle-o"></i>add
+                estate</a>
         </li>
-        <li><a href="{{url('/adminpanel/buildings')}}"><i class="fa fa-circle-o"></i> all state</a></li>
+        <li><a href="{{url('/adminpanel/buildings')}}"><i class="fa fa-circle-o"></i> all estate</a></li>
     </ul>
 </li>

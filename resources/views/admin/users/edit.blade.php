@@ -5,6 +5,7 @@
 @endsection
 
 @section('header')
+    {!! Html::style('custom/select2.min.css') !!}
 @endsection
 
 @section('content')
@@ -80,4 +81,10 @@
 @endsection
 
 @section('footer')
+    <script>
+        $(document).ready(function () {
+            $('.select2').select2();
+        });
+    </script>
+    {!! Html::script('custom/select2.min.js') !!}
 @endsection

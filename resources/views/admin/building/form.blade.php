@@ -14,10 +14,23 @@
     </div>
 </div>
 <div class="form-group row">
+    <label for="place" class="col-md-2 col-form-label text-md-right">{{ __('place') }}</label>
+
+    <div class="col-md-10">
+        {!! Form::select('place' ,all_places(),null,['class'=>'form-control select2','placeholder'=>'place']) !!}
+
+        @if ($errors->has('place'))
+            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('place') }}</strong>
+                                    </span>
+        @endif
+    </div>
+</div>
+<div class="form-group row">
     <label for="price" class="col-md-2 col-form-label text-md-right">{{ __('price') }}</label>
 
     <div class="col-md-10">
-        {!! Form::text('price', null, array('placeholder' => 'price','class' => 'form-control')) !!}
+        {!! Form::text('price', null, array('placeholder' => 'price','class' => 'form-control select2')) !!}
 
         @if ($errors->has('price'))
             <span class="invalid-feedback" role="alert">
@@ -30,7 +43,7 @@
     <label for="rooms" class="col-md-2 col-form-label text-md-right">{{ __('rooms') }}</label>
 
     <div class="col-md-10">
-        {!! Form::text('rooms', null, array('placeholder' => 'rooms','class' => 'form-control')) !!}
+        {!! Form::select('rooms',rooms(), null, array('placeholder' => 'rooms','class' => 'form-control')) !!}
 
         @if ($errors->has('rooms'))
             <span class="invalid-feedback" role="alert">
